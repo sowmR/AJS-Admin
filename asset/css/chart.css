@@ -1,0 +1,69 @@
+.chart-hover{position:absolute;z-index:1000}
+.chart-hover.chart-default-style{
+	border-radius:10px;
+	padding:6px;
+	color:#666;
+	background:rgba(255,255,255,0.8);
+	border:solid 2px rgba(230,230,230,0.8);
+	font-family:sans-serif;
+	font-size:12px;text-align:center;
+	}
+.chart-hover.chart-default-style .chart-hover-row-label{font-weight:bold;margin:0.25em 0}
+.chart-hover.chart-default-style .chart-hover-point{white-space:nowrap;margin:0.1em 0}
+.ct-label{
+    color:#353535;
+}
+.ct-bar{
+    background-color: #F7D358;
+}
+
+.barchart{
+    display: block;
+    color: #343434;
+    text-align: center;
+    border-radius:20px;
+   	border:1px solid rgba(200,200,200,1);
+    box-shadow: 0 0 3px 1px rgba(0,0,0,0.15);
+    background: transparent;
+    margin-bottom: 5px;
+    margin-top: 5px;
+
+}
+.barchart > .panel-heading{
+	background:linear-gradient(from Top,#D1CDCD,#CECACA,#F2EEEE,#CECACA,#D1CDCD);
+	background:-webkit-linear-gradient(Top,#D1CDCD,#CECACA,#F2EEEE,#CECACA,#D1CDCD);
+	background:-o-linear-gradient(Top,#D1CDCD,#CECACA,#F2EEEE,#CECACA,#D1CDCD);
+	background:-moz-linear-gradient(Top,#D1CDCD,#CECACA,#F2EEEE,#CECACA,#D1CDCD);
+	border-radius: 20px 20px 0 0;
+}
+.barchart>.panel-body{
+    border:2px solid #c8c8c8;
+    color:#343434;
+    border-radius: 0 0 20px 20px;
+    background-color: rgba(240,237,237,0.3);
+    background:linear-gradient(from Top left,#F2EEEE,#F7EFEF,#FDFAFA,#F7EFEF,#F2EEEE);
+	background:-webkit-linear-gradient(Top left,#F2EEEE,#F7EFEF,#FDFAFA,#F7EFEF,#F2EEEE);
+	background:-o-linear-gradient(Top, left#F2EEEE,#F7EFEF,#FDFAFA,#F7EFEF,#F2EEEE);
+	background:-moz-linear-gradient(Top left,#F2EEEE,#F7EFEF,#FDFAFA,#F7EFEF,#F2EEEE);
+}
+
+.barchart.animated {
+    animation-duration: 0.5s;
+}
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+@keyframe fadeIn
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}

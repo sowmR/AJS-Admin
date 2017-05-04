@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Admin 1.0 Dashboard</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- *************STYLES*******************-->
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?aovs">
+  
+  <link rel="stylesheet" href="asset/css/app.css">
+  <link rel="stylesheet" href="asset/css/dashboard.css">
+  <link rel="stylesheet" href="asset/css/auth.css">
+  <link rel="stylesheet" href="asset/css/chart.css">
+
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
+<!--- ***********BOOTSTRAP*******************-->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/js/bootstrap.min.js">
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  
+<!-- *******************Table and Charts Stylesheets*******************-->
+  <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
+  <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.min.css">
+
+</head>
+<body class="header-gradient">
+<!-- ****************navigation***********************-->
+<div class="header-gradient">
+<div id="page-wrapper">
+        <div class="container-fluid">
+        <div class="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar  navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" ng-click="isNavCollapsed = !isNavCollapsed">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="fa fa-bars fa-x" aria-hidden="true"></i>
+                </button>
+                <a class="navbar-brand" href="#!/"><img src="/asset/img/logo.png" width="20"></a>
+                <a class="navbar-brand">Admin 1.0</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                  <div class="btn-group" uib-dropdown is-open="status.isopen">
+                    <button id="single-button" type="button" class="btn dropdown" uib-dropdown-toggle ng-disabled="disabled">
+                      <i class="fa fa-user"></i> Sowmya R <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                      <li role="menuitem"><a href="#!/"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
+                      <li role="menuitem"><a href="#!/chart"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a></li>
+                      <li role="menuitem"><a href="#!/register"><i class="fa fa-fw fa-edit"></i> Register</a></li>
+                      <li role="menuitem"><a href="#!/HTTP"><i class="fa fa-fw fa-wrench"></i> Table</a></li>         
+                      <li class="divider"></li>
+                      <li role="menuitem"><a href="#!/login"><i class="fa fa-fw fa-desktop"></i>Login</a></li>
+                    </ul>
+                  </div>
+               <!-- <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-target=".dropdown-menu">
+                    <i class="fa fa-user"></i> Sowmya R <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a><i class="fa fa-fw fa-user"></i> Profile</a>
+                        </li>
+                        <li>
+                            <a><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+                        </li>
+                        <li>
+                            <a><i class="fa fa-fw fa-gear"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>-->
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse in" uib-collapse="isNavCollapsed">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a href="#!/"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#!/chart"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                    </li>
+                    <li>
+                        <a href="#!/register"><i class="fa fa-fw fa-edit"></i> Register</a>
+                    </li>
+                    <li>
+                        <a href="#!/login"><i class="fa fa-fw fa-desktop"></i>Login</a>
+                    </li>
+                    <li>
+                        <a href="#!/HTTP"><i class="fa fa-fw fa-wrench"></i> Table</a>
+                    </li><!--
+                    <li>
+                        <a><i class="fa fa-fw fa-file"></i> Blank Page</a>
+                    </li>-->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div ng-view></div>
+
+    
+        </div>
+        </div>
+    </div>
+</div>
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+<!-- ********************* JSCRIPTS- PLUGINS********************-->
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-ui/build/angular-ui.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-touch.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
+  <script src="bower_components/ui-bootstrap-tpls-2.5.0.min.js"></script>
+
+  <!-- <script src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
+  <script src="bower_components/lodash/lodash.js"></script>-->
+<!-- *******************Table***********************-->
+  <script src="bower_components/angular-ui-grid/ui-grid.min.js"></script>
+  <script src="bower_components/angular-ui-grid/grunt-scripts/csv.js"></script>
+  <script src="bower_components/angular-ui-grid/grunt-scripts/pdfmake.js"></script>
+  <script src="bower_components/angular-ui-grid/grunt-scripts/vfs_fonts.js"></script>
+<!--  <script src="https://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+  <script src="https://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+  <script src="https://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+ -->
+<!-- *******************CHARTS***********************-->
+  <script src="bower_components/chartist/dist/chartist.min.js">></script>
+  <script src="bower_components/angular-chartist/angular-chartist.js"></script>
+<!-- *********************Maps**Donot change the order***********************
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmDsIYHmYZndacmluzb0ZMx12UM-BQjcI"
+    async defer></script>-->
+<script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+<script src="bower_components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
+<script src="bower_components/lodash/dist/lodash.min.js"></script>
+<script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+
+<!-- **********************APP SCRIPT**************************-->  
+  <script src="app.js"></script>
+  <script src="chart/chart.js"></script>
+  <script src="dashboard/dashboard.js"></script>
+  <script src="HTTP/HTTP.js"></script>
+  <script src="login/login.js"></script>
+  <script src="register/register.js"></script>
+  
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+icon-blue =01A9DB
+orange: F7D358
+background-color: #0143A3;
+gray
+	dark : #585858
+	medium: #848484
+	light: #BDBDBD
+
+brown-orange:
+	dark: #61380B
+	medium:B45F04
+	light:FE9A2E
+
+blue:
+	dark: 084B8A
+	medium:0174DF
+	light:#A9D0F5
+
+
+	dark:
+	medium:
+	light:
+	
