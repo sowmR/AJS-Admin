@@ -1,0 +1,174 @@
+<div class="page-wrapper">
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header" style="color:#1B4991;">
+                Dashboard <small>Sample</small>
+            </h1>
+        </div>
+    </div>
+    <!-- /.row -->
+
+  <!-- row. 1-->
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-5">
+            <div class="icon-panel purple">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-snowflake-o huge"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">23</div>
+                            <div class="icon-text">Cooling</div>
+                        </div>
+                </div>
+               </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-5">
+            <div class="icon-panel orange">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-thermometer-2 huge"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">12</div>
+                            <div class="icon-text">Refrigerator</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-5">
+            <div class="icon-panel green">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-fire huge "></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">124</div>
+                            <div class="icon-text">Heating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-5">
+            <div class="icon-panel red">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-plug huge"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">13</div>
+                            <div class="icon-text">Other</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row - 1 -->
+<!-- row . 2 -->
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><!-- reference Profile-->
+            <div class="barchart">
+                <div class="panel-heading">
+                    <h3 class="panel-title"> Reference Profile</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="ReferenceProfile" class="col-xs-12 col-md-7">
+                        <div class="col-xs-12 col-md-7 form-horizontal">
+							<div class="row">
+								<label for="building-type" class="control-label strong-text col-xs-6" >Building Type: &nbsp;&nbsp;</label>
+								<select class="form-select col-xs-6 pull-right" id="building-type"
+                                ng-model="selectedbuilding" ng-init="selectedbuilding=buildingtype[0];"  ng-options="item.name for item in buildingtype ">
+								</select>
+							</div>
+							<div class="row">
+								<label for="plocation" class="control-label strong-text col-xs-6">Project Location: </label>
+								<label id="plocation" class="control-label col-xs-6 pull-right">{{project_location}}</label>
+							</div>
+							<div class="row">
+								<label for="rlocation" class=" control-label strong-text col-xs-6">Reference Location: </label>
+								<label id="rlocation" class="control-label col-xs-6 pull-right">{{reference_location}}</label>
+							</div>
+							<div class="row">
+								<label for="selected_doe" class="control-label strong-text col-xs-6">Selected DOE reference profile:</label>
+								<label id="selected_doe" class="control-label col-xs-6 pull-right">{{selected_doe}}</label>
+							</div>
+
+						</div>
+                    </div>
+                    <div class="col-md-3 col-xs-12">
+                        <h4>{{selectedbuilding.name}}</h4>
+                        <img class="img-responsive" src="{{selectedbuilding.img_url}}" width="300px" height="180px"/>
+                    </div>
+                </div>
+            </div>
+        </div><!-- reference Profile-->
+    </div>
+    <!-- /.row -->
+<!-- map-display-->
+
+    <div class="row">
+         <div class="col-lg-6 col-xs-12 col-md-5 col-xm-5">
+         <div class="barchart">
+          <div class="dash-block header-gradient">
+            <div class="ct-chart ct-golden-section" id="chart1"></div>
+          </div>
+        </div>
+ </div>
+ <div class="col-lg-6 col-xs-12 col-md-5 col-xm-5">
+         <div class="barchart">
+          <div class="dash-block header-gradient">
+            <div class="ct-chart ct-golden-section" id="chart2"></div>
+          </div>
+        </div>
+ </div>
+        <div class="col-lg-12 col-xs-12 col-md-12 col-sm-5">
+                 <!--   <img id="modalimg" class="img-responsive modalimg col-sm-3 col-xs-6" src="/asset/img/graph.png" width="50%" height="50%"> 
+                    <img class="img-responsive modalimg col-sm-3 col-xs-6" src="/asset/img/graph.png" width="50%" height="50%"> 
+                    <img class="img-responsive modalimg col-sm-3 col-xs-6" src="/asset/img/graph.png" width="50%" height="50%"> 
+                    <img class="img-responsive modalimg col-sm-3 col-xs-6" src="/asset/img/graph.png" width="50%" height="50%"> 
+                    <!-- The Modal 
+<div id="myModal" class="modal">
+<span class="close">&times;</span>
+<img class="modal-content" id="img01" src="/asset/img/graph.png">
+</div>-->
+        <div class=" dash-map">
+            <ui-gmap-google-map  
+                center='map.center' 
+                zoom='map.zoom' 
+                draggable="true" 
+                dragging="map.dragging"
+                control="map.control"
+                options="options">
+                <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+                </ui-gmap-marker>
+            </ui-gmap-google-map>
+        </div>
+        </div>
+    </div>
+    <!-- /.chart display -->
+
+</div>
+<!-- /.container-fluid -->
+
+</div>
+<!-- /#page-wrapper -->
+
+
+<script type="text/javascript">
+</script>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmDsIYHmYZndacmluzb0ZMx12UM-BQjcI"
+    async defer></script>
+    -->
