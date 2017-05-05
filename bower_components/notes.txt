@@ -1,3 +1,0 @@
-The bower components contains the dependecies installations for the project that are installed with 
-
-  bower install <dependecy>
