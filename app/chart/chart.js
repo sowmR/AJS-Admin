@@ -67,7 +67,7 @@ angular.module('myApp.chart', ['ngRoute'])
 	//barchart
 	var data={
 		labels:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
-		series:[[100,38,77,23,65,34,67,23,45,56,23,10]]
+		series:[[100,30,77,23,65,54,67,23,45,56,23,10]]
 	}
 	var options = {
   		fullWidth: true,
