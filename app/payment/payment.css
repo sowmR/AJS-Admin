@@ -1,0 +1,45 @@
+form {
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 5%;
+}
+
+.expiry{
+  width: 20%;
+  display: inline-block;
+}
+
+.cvc {
+  width: 40%;
+}
+
+.info p {
+  text-align: center;
+  font-size: 2em;
+  margin-top: 20px;
+}
+
+input[name="cardExpMonth"], input[name="cardExpYear"] {
+  width: 45%;
+}
+
+input[name="cardExpMonth"]{
+  display: inline;
+}
+
+input[name="cardExpYear"]{
+  display: inline-block;
+}
+
+.message {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+input.ng-invalid.ng-dirty {
+  border-color: #FA787E;
+}
+
+input.ng-valid.ng-dirty {
+  border-color: #78FA89;
+}

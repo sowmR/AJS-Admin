@@ -4,7 +4,8 @@
 angular.module('myApp', [
   'ngRoute',
   'angular-chartist',
-  'ngAnimate', 
+  'ngAnimate',
+  'ngSanitize', 
   'ui.bootstrap',
   'uiGmapgoogle-maps',
   'ngTouch',
@@ -13,6 +14,7 @@ angular.module('myApp', [
   'myApp.HTTP',
   'myApp.login',
   'myApp.register',
+  'paymentApp',
   'myApp.version'
 ]).config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');

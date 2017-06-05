@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Admin 1.0 Dashboard</title>
-  <meta name="description" content="Sample dashboard created by sowmya">
+  <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- *************STYLES*******************-->
@@ -55,7 +55,7 @@
             <ul class="nav navbar-right top-nav">
                   <div class="btn-group" uib-dropdown is-open="status.isopen">
                     <button id="single-button" type="button" class="btn dropdown" uib-dropdown-toggle ng-disabled="disabled">
-                      <i class="fa fa-user"></i> Sowmya <span class="caret"></span>
+                      <i class="fa fa-user"></i> Sowmya R <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
                       <li role="menuitem"><a href="#!/"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
@@ -103,7 +103,11 @@
                     </li>
                     <li>
                         <a href="#!/HTTP"><i class="fa fa-fw fa-wrench"></i> Table</a>
-                    </li><!--
+                    </li>
+                     <li>
+                        <a href="#!/payment"><i class="fa fa-fw fa-dollar"></i> Payment Form</a>
+                    </li>
+                    <!--
                     <li>
                         <a><i class="fa fa-fw fa-file"></i> Blank Page</a>
                     </li>-->
@@ -132,6 +136,8 @@
   <script src="bower_components/angular-ui/build/angular-ui.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-touch.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular-sanitize.js"></script>
+
   <script src="bower_components/ui-bootstrap-tpls-2.5.0.min.js"></script>
 
   <!-- <script src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
@@ -163,7 +169,8 @@
   <script src="HTTP/HTTP.js"></script>
   <script src="login/login.js"></script>
   <script src="register/register.js"></script>
-  
+  <script src="payment/payment.js"></script>
+
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>

@@ -1,0 +1,87 @@
+
+    <link rel="stylesheet" href="payment/payment.css">
+    <title>Payment Validation</title>
+    <div ng-controller="FormController as frmCtrl">
+      <!-- Enter Title here -->
+      <br />
+      <!-- Use angular.js directives in the form below to obtain the necessary functioning -->
+      <form novalidate name="paymentForm">
+        <div class="form-group" ><!-- card number type-->
+          <label for="cardNum">Card Number</label>
+          <input type="text" 
+            name="cardNum" 
+            class="form-control" 
+            id="card-num" 
+            required 
+            placeholder="Enter the Card Number" 
+            ng-model="card.number" 
+            data-credit-card-type 
+            data-ng-pattern="/^[0-9]+$/"  
+            data-ng-minlength="15" 
+            maxlength="19"
+          ><p class="help-block" ng-bind-html="cardtype"></p>
+          <ul class="help-block" ng-show="paymentForm.submitAttempt && !paymentForm.$valid">
+          <li ng-show="paymentForm.cardNum.$error.minlength">Credit card must be 15-19 digits</li>
+          <li ng-show="paymentForm.cardNum.$error.pattern">Credit card must consist of only numbers</li>
+          <li ng-show="paymentForm.cardNum.$error.invalid">Credit card must be a valid Amex, Visa, Discover, or Master Card</li>
+          <li ng-show="paymentForm.cardNum.$error.required">Credit card required</li></ul>
+        </div>
+        <div class="form-group"><!-- name on the card-->
+          <label for="cardName">Name on Card</label>
+          <input 
+            type="text" 
+            name="cardName" 
+            class="form-control" 
+            id="full-name" 
+            required 
+            placeholder="Enter the name on the card in all caps" 
+            ng-model="card.name" 
+          >
+          
+          <p class="help-block" ng-show="paymentForm.submitAttempt && !paymentForm.$valid">Invalid Name.</p>
+        </div>
+        <div class="row" ><!-- expiration date-->
+          <div class="form-group expiry col-md-6">
+            <label for="cardExp">Expiration</label>
+            <br />
+            <input 
+              type="text" 
+              name="cardExpMonth" 
+              class="form-control" 
+              id="expiry-date"  
+              required 
+              placeholder="mm" 
+              data-ng-pattern="/^[0-9]+$/" 
+              data-ng-minlength="2" 
+              maxlength="2" 
+              ng-model="card.month"
+              data-card-expiration>
+            <input 
+              type="text" 
+              name="cardExpYear" 
+              class="form-control" 
+              id="expiry-date" 
+              required 
+              placeholder="yy" 
+              ng-model="card.year" 
+              data-ng-pattern="/^[0-9]+$/" 
+              data-ng-minlength="2" 
+              maxlength="2" 
+              data-card-expiration>
+            <ul class="help-block" ng-show="paymentForm.submitAttempt && !paymentForm.$valid">
+      <li ng-show="paymentForm.cardExpYear.$error.required">Expiration year required</li>
+      <li ng-show="paymentForm.cardExpMonth.$error.invalid">Provided expiration date is invalid</li>
+    </ul>
+          </div>
+          <div class="form-group cvc col-md-6">
+            <label for="cardCVV">CVV/CVC</label>
+            <input type="text" name="cardCVV" class="form-control" id="cvc" placeholder="CVV/CVC Number" ng-model="card.cvc" data-ng-pattern="/^[0-9]+$/" data-ng-minlength="3" maxlength="4">
+            <p class="help-block" ng-show="paymentForm.submitAttempt && !paymentForm.$valid">Invalid CVV Number.</p>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" ng-click="paymentForm.submitAttempt=true;save(card)"><a href="" style="text-decoration: none; color: white;">Verify</a></button>
+      </form>
+      <br/><br/>
+      <!-- Render the message here -->
+      <div class="col-sm-12">{{payment_result}}</div>
+    </div>
